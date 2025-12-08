@@ -55,7 +55,6 @@ tun:
   auto-route: true
   auto-detect-interface: true
   strict-route: true
-  dns-hijack:-interface: true
   dns-hijack:
     - any:53
 
@@ -284,6 +283,8 @@ rules:
   - DOMAIN,ipv6.msftconnecttest.com,REJECT
   - DOMAIN,ipv6.msftncsi.com,REJECT
   - DST-PORT,123,DIRECT
+  - DST-PORT,6881-6889,DIRECT
+  - DST-PORT,51413,DIRECT
   - DOMAIN-SUFFIX,github.com,国外通用
   - RULE-SET,reject,REJECT
   - DST-PORT,22,国外通用
@@ -301,6 +302,7 @@ rules:
   - RULE-SET,geolocation-!cn_domain,国外通用
   - RULE-SET,Google_ip,Google
   - RULE-SET,cn_ip,国内
+  - GEOIP,CN,国内
   - MATCH,国外通用
 
 
