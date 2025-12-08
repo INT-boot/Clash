@@ -1,5 +1,5 @@
-ï»¿# Last Updated: 2025-12-08 22:55:00
-# åŸºç¡€è®¾ç½®
+# Last Updated: 2025-12-09 00:13:05
+# »ù´¡ÉèÖÃ
 geodata-loader: memconservative
 tcp-concurrent: true
 global-client-fingerprint: edge
@@ -12,7 +12,7 @@ profile:
   store-selected: true
   auto-update: true
 
-# è¿›é˜¶ç½‘ç»œè®¾ç½® (DNS/Sniffer/Tun)
+# ½ø½×ÍøÂçÉèÖÃ (DNS/Sniffer/Tun)
 sniffer:
   enable: true
   parse-pure-ip: true
@@ -57,14 +57,14 @@ tun:
   dns-hijack:
     - any:53
 
-# GEO æ•°æ®æº
+# GEO Êı¾İÔ´
 geox-url:
   geoip: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat'
   geosite: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat'
   mmdb: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb'
   asn: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb'
 
-# è§„åˆ™è®¢é˜…
+# ¹æÔò¶©ÔÄ
 rule-providers:
   reject:
     url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
@@ -172,9 +172,9 @@ rule-providers:
     format: yaml
     type: http
 
-# åˆ†ç»„è®¾ç½®
+# ·Ö×éÉèÖÃ
 proxy-groups:
-  - name: è‡ªåŠ¨é€‰æ‹©
+  - name: ×Ô¶¯Ñ¡Ôñ
     type: url-test
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Urltest.png
     include-all: true
@@ -186,7 +186,7 @@ proxy-groups:
     health-check:
       enable: true
 
-  - name: è´Ÿè½½å‡è¡¡
+  - name: ¸ºÔØ¾ùºâ
     type: load-balance
     strategy: consistent-hashing
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Roundrobin.png
@@ -196,12 +196,12 @@ proxy-groups:
     health-check:
       enable: true
 
-  - name: AIè‡ªåŠ¨ä¼˜é€‰
+  - name: AI×Ô¶¯ÓÅÑ¡
     type: url-test
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
     include-all: true
-    filter: "(?i)ç¾å›½|æ—¥æœ¬|è·å…°|æ–°åŠ å¡|å°æ¹¾"
-    exclude-filter: "(?i)åœ£ä½•å¡"
+    filter: "(?i)ÃÀ¹ú|ÈÕ±¾|ºÉÀ¼|ĞÂ¼ÓÆÂ|Ì¨Íå"
+    exclude-filter: "(?i)Ê¥ºÎÈû"
     url: "https://www.gstatic.com/generate_204"
     interval: 180
     tolerance: 50
@@ -210,47 +210,47 @@ proxy-groups:
     health-check:
       enable: true
 
-  - name: å›½å†…
+  - name: ¹úÄÚ
     type: select
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/CN.png
     proxies:
       - DIRECT
-      - è‡ªåŠ¨é€‰æ‹©
-      - è´Ÿè½½å‡è¡¡
+      - ×Ô¶¯Ñ¡Ôñ
+      - ¸ºÔØ¾ùºâ
   - name: Google
     type: select
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Google.png
     proxies:
-      - AIè‡ªåŠ¨ä¼˜é€‰
-      - è‡ªåŠ¨é€‰æ‹©
-      - è´Ÿè½½å‡è¡¡
+      - AI×Ô¶¯ÓÅÑ¡
+      - ×Ô¶¯Ñ¡Ôñ
+      - ¸ºÔØ¾ùºâ
       - DIRECT
 
   - name: OpenAI
     type: select
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
     proxies:
-      - AIè‡ªåŠ¨ä¼˜é€‰
-      - è‡ªåŠ¨é€‰æ‹©
+      - AI×Ô¶¯ÓÅÑ¡
+      - ×Ô¶¯Ñ¡Ôñ
 
   - name: Gemini
     type: select
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Google.png
     proxies:
-      - AIè‡ªåŠ¨ä¼˜é€‰
-      - è‡ªåŠ¨é€‰æ‹©
+      - AI×Ô¶¯ÓÅÑ¡
+      - ×Ô¶¯Ñ¡Ôñ
 
   - name: Copilot
     type: select
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Bing.png
     proxies:
-      - AIè‡ªåŠ¨ä¼˜é€‰
-      - è‡ªåŠ¨é€‰æ‹©
-  - name: æ¸¸æˆæœåŠ¡
+      - AI×Ô¶¯ÓÅÑ¡
+      - ×Ô¶¯Ñ¡Ôñ
+  - name: ÓÎÏ··şÎñ
     type: url-test
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/GAME.png
     include-all: true
-    filter: "(?i)é¦™æ¸¯|å°æ¹¾|æ–°åŠ å¡|æ—¥æœ¬|éŸ©å›½"
+    filter: "(?i)Ïã¸Û|Ì¨Íå|ĞÂ¼ÓÆÂ|ÈÕ±¾|º«¹ú"
     url: "https://www.gstatic.com/generate_204"
     interval: 180
     tolerance: 100
@@ -262,41 +262,42 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/YouTube.png
     proxies:
-      - è´Ÿè½½å‡è¡¡
-      - è‡ªåŠ¨é€‰æ‹©
-      - AIè‡ªåŠ¨ä¼˜é€‰
-  - name: å›½å¤–é€šç”¨
+      - ¸ºÔØ¾ùºâ
+      - ×Ô¶¯Ñ¡Ôñ
+      - AI×Ô¶¯ÓÅÑ¡
+  - name: ¹úÍâÍ¨ÓÃ
     type: select
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
     proxies:
-      - è´Ÿè½½å‡è¡¡
-      - è‡ªåŠ¨é€‰æ‹©
-      - AIè‡ªåŠ¨ä¼˜é€‰
+      - ¸ºÔØ¾ùºâ
+      - ×Ô¶¯Ñ¡Ôñ
+      - AI×Ô¶¯ÓÅÑ¡
 
-# è§„åˆ™è®¾ç½®
+# ¹æÔòÉèÖÃ
 rules:
+  - DOMAIN-SUFFIX,yfjc.xyz,DIRECT
   - DOMAIN,ipv6.msftconnecttest.com,REJECT
   - DOMAIN,ipv6.msftncsi.com,REJECT
   - GEOIP,PRIVATE,DIRECT,no-resolve
   - DST-PORT,123,DIRECT
-  - DOMAIN-SUFFIX,github.com,å›½å¤–é€šç”¨
+  - DOMAIN-SUFFIX,github.com,¹úÍâÍ¨ÓÃ
   - RULE-SET,reject,REJECT
-  - DST-PORT,22,å›½å¤–é€šç”¨
-  - RULE-SET,games,æ¸¸æˆæœåŠ¡
+  - DST-PORT,22,¹úÍâÍ¨ÓÃ
+  - RULE-SET,games,ÓÎÏ··şÎñ
   - RULE-SET,icloud,DIRECT
   - RULE-SET,apple,DIRECT
   - RULE-SET,openai_classical,OpenAI
   - RULE-SET,gemini_classical,Gemini
   - RULE-SET,copilot_classical,Copilot
   - RULE-SET,microsoft,DIRECT
-  - RULE-SET,telegram,å›½å¤–é€šç”¨
+  - RULE-SET,telegram,¹úÍâÍ¨ÓÃ
   - RULE-SET,YouTube_domain,YouTube
   - RULE-SET,Google_domain,Google
-  - RULE-SET,cn_domain,å›½å†…
-  - RULE-SET,geolocation-!cn_domain,å›½å¤–é€šç”¨
+  - RULE-SET,cn_domain,¹úÄÚ
+  - RULE-SET,geolocation-!cn_domain,¹úÍâÍ¨ÓÃ
   - RULE-SET,Google_ip,Google
-  - RULE-SET,cn_ip,å›½å†…
-  - MATCH,å›½å¤–é€šç”¨
+  - RULE-SET,cn_ip,¹úÄÚ
+  - MATCH,¹úÍâÍ¨ÓÃ
 
 
 
