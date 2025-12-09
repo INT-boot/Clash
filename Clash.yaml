@@ -65,104 +65,104 @@ rule-providers:
     path: ./ruleset/reject.yaml
     behavior: domain
     interval: 86400
-    format: yaml
+    format: text
     type: http
   icloud:
     url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt
     path: ./ruleset/icloud.yaml
     behavior: domain
-    interval: 86400
-    format: yaml
+    interval: 86600
+    format: text
     type: http
   microsoft:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.yaml
     path: ./ruleset/microsoft.yaml
     behavior: domain
-    interval: 86400
+    interval: 86800
     format: yaml
     type: http
   apple:
     url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt
     path: ./ruleset/apple.yaml
     behavior: domain
-    interval: 86400
-    format: yaml
+    interval: 87000
+    format: text
     type: http
   telegram:
     url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt
     path: ./ruleset/telegram.yaml
     behavior: ipcidr
-    interval: 86400
-    format: yaml
+    interval: 87200
+    format: text
     type: http
   cn_domain:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.yaml
     path: ./ruleset/cn_domain.yaml
     behavior: domain
-    interval: 86400
+    interval: 87400
     format: yaml
     type: http
   cn_ip:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.yaml
     path: ./ruleset/cn_ip.yaml
     behavior: ipcidr
-    interval: 86400
+    interval: 87600
     format: yaml
     type: http
-  Google_domain:
+  google_domain:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.yaml
     path: ./ruleset/google_domain.yaml
     behavior: domain
-    interval: 86400
+    interval: 87800
     format: yaml
     type: http
-  Google_ip:
+  google_ip:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.yaml
     path: ./ruleset/google_ip.yaml
     behavior: ipcidr
-    interval: 86400
+    interval: 88000
     format: yaml
     type: http
   openai_classical:
     url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml
     path: ./ruleset/openai_classical.yaml
     behavior: classical
-    interval: 86400
+    interval: 88200
     format: yaml
     type: http
   gemini_classical:
     url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Gemini/Gemini.yaml
     path: ./ruleset/gemini_classical.yaml
     behavior: classical
-    interval: 86400
+    interval: 88400
     format: yaml
     type: http
   copilot_classical:
     url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Copilot/Copilot.yaml
     path: ./ruleset/copilot_classical.yaml
     behavior: classical
-    interval: 86400
+    interval: 88600
     format: yaml
     type: http
-  YouTube_domain:
+  youtube_domain:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.yaml
     path: ./ruleset/youtube_domain.yaml
     behavior: domain
-    interval: 86400
+    interval: 88800
     format: yaml
     type: http
   games:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games.yaml
     path: ./ruleset/games.yaml
     behavior: domain
-    interval: 86400
+    interval: 89000
     format: yaml
     type: http
-  geolocation-!cn_domain:
+  geolocation_no_cn:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.yaml
     path: ./ruleset/geolocation-!cn_domain.yaml
     behavior: domain
-    interval: 86400
+    interval: 89200
     format: yaml
     type: http
 
@@ -172,6 +172,7 @@ proxy-groups:
     type: url-test
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Urltest.png
     include-all: true
+    exclude-filter: "(?i)流量|到期|重置|官网|剩余|expire|traffic|reset"
     url: "https://www.gstatic.com/generate_204"
     interval: 180
     tolerance: 50
@@ -185,6 +186,7 @@ proxy-groups:
     strategy: consistent-hashing
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Roundrobin.png
     include-all: true
+    exclude-filter: "(?i)流量|到期|重置|官网|剩余|expire|traffic|reset"
     url: "https://www.gstatic.com/generate_204"
     interval: 180
     health-check:
@@ -289,11 +291,11 @@ rules:
   - RULE-SET,copilot_classical,Copilot
   - RULE-SET,microsoft,DIRECT
   - RULE-SET,telegram,国外通用
-  - RULE-SET,YouTube_domain,YouTube
-  - RULE-SET,Google_domain,Google
+  - RULE-SET,youtube_domain,YouTube
+  - RULE-SET,google_domain,Google
   - RULE-SET,cn_domain,国内
-  - RULE-SET,geolocation-!cn_domain,国外通用
-  - RULE-SET,Google_ip,Google
+  - RULE-SET,geolocation_no_cn,国外通用
+  - RULE-SET,google_ip,Google
   - RULE-SET,cn_ip,国内
   - GEOIP,CN,国内
   - MATCH,国外通用
