@@ -1,4 +1,4 @@
-# Last Updated: 2025-12-09 02:05:00
+﻿# Last Updated: 2025-12-09 02:05:00
 # 基础设置
 geodata-loader: memconservative
 tcp-concurrent: true
@@ -58,115 +58,109 @@ tun:
   dns-hijack:
     - any:53
 
-# GEO 数据
-geox-url:
-  geoip: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat'
-  geosite: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat'
-  mmdb: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb'
-  asn: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb'
 
 # 规则订阅
 rule-providers:
   reject:
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
+    url: http://127.0.0.1:38324/api/file/reject
     path: ./ruleset/reject.yaml
     behavior: domain
     interval: 86400
     format: yaml
     type: http
   icloud:
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt
+    url: http://127.0.0.1:38324/api/file/icloud
     path: ./ruleset/icloud.yaml
     behavior: domain
     interval: 86400
     format: yaml
     type: http
   microsoft:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.yaml
+    url: http://127.0.0.1:38324/api/file/microsoft
     path: ./ruleset/microsoft.yaml
     behavior: domain
     interval: 86400
     format: yaml
     type: http
   apple:
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt
+    url: http://127.0.0.1:38324/api/file/apple
     path: ./ruleset/apple.yaml
     behavior: domain
     interval: 86400
     format: yaml
     type: http
   telegram:
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt
+    url: http://127.0.0.1:38324/api/file/telegram
     path: ./ruleset/telegram.yaml
     behavior: ipcidr
     interval: 86400
     format: yaml
     type: http
   cn_domain:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.yaml
+    url: http://127.0.0.1:38324/api/file/cn_domain
     path: ./ruleset/cn_domain.yaml
     behavior: domain
     interval: 86400
     format: yaml
     type: http
   cn_ip:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.yaml
+    url: http://127.0.0.1:38324/api/file/cn_ip
     path: ./ruleset/cn_ip.yaml
     behavior: ipcidr
     interval: 86400
     format: yaml
     type: http
   Google_domain:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.yaml
+    url: http://127.0.0.1:38324/api/file/Google_domain
     path: ./ruleset/google_domain.yaml
     behavior: domain
     interval: 86400
     format: yaml
     type: http
   Google_ip:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.yaml
+    url: http://127.0.0.1:38324/api/file/Google_ip
     path: ./ruleset/google_ip.yaml
     behavior: ipcidr
     interval: 86400
     format: yaml
     type: http
   openai_classical:
-    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml
+    url: http://127.0.0.1:38324/api/file/openai_classical
     path: ./ruleset/openai_classical.yaml
     behavior: classical
     interval: 86400
     format: yaml
     type: http
   gemini_classical:
-    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Gemini/Gemini.yaml
+    url: http://127.0.0.1:38324/api/file/gemini_classical
     path: ./ruleset/gemini_classical.yaml
     behavior: classical
     interval: 86400
     format: yaml
     type: http
   copilot_classical:
-    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Copilot/Copilot.yaml
+    url: http://127.0.0.1:38324/api/file/copilot_classical
     path: ./ruleset/copilot_classical.yaml
     behavior: classical
     interval: 86400
     format: yaml
     type: http
   YouTube_domain:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.yaml
+    url: http://127.0.0.1:38324/api/file/YouTube_domain
     path: ./ruleset/youtube_domain.yaml
     behavior: domain
     interval: 86400
     format: yaml
     type: http
   games:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games.yaml
+    url: http://127.0.0.1:38324/api/file/games
     path: ./ruleset/games.yaml
     behavior: domain
     interval: 86400
     format: yaml
     type: http
   geolocation-!cn_domain:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.yaml
+    url: http://127.0.0.1:38324/api/file/geolocation-!cn_domain
     path: ./ruleset/geolocation-!cn_domain.yaml
     behavior: domain
     interval: 86400
