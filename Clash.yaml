@@ -10,7 +10,7 @@ geo-update-interval: 24
 
 profile:
   store-selected: true
-  auto-update: true
+  auto-update: false
 
 # 进阶网络设置 (DNS/Sniffer/Tun)
 sniffer:
